@@ -1,20 +1,22 @@
 package com.stock;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Pattern
 {
 	public void quoteSuggestion(ArrayList<Double> data)
 	{
-		System.out.println("----------Suggestions for stock1-------------");
+		System.out.println("\n----------Suggestions for stock1-------------");
 		// up-down trend count
 		int upCount = 0, downCount =0;
 		String stock =  "";
+		DecimalFormat df = new DecimalFormat("0.000");
 		
 		
 		for(int i = 0; i < data.size(); i++)
 		{
-			stock = (i+1)+"\t"+data.get(i);
+			stock = (i+1)+"\t"+df.format(data.get(i));
 			
 			if(i > 0)
 			{
